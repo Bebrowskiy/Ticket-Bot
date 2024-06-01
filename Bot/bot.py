@@ -6,12 +6,13 @@ import json
 from utils.utils import load_config
 
 
-config = load_config()
-prefix = config.get("prefix")
-token = config.get("token")
-category_name = "ABC"
-channel_name = "ABC"
-
+config = load_config()  # Loading the config file
+prefix = config.get("prefix")  # Getting the prefix from the config file
+token = config.get("token")  # Getting the token from the config file
+# Getting the category name from the config file
+category_name = config.get("ticket_category_name")
+# Getting the channel name from the config file
+channel_name = config.get("ticket_channel_name")
 
 bot = commands.Bot(command_prefix=prefix, intents=disnake.Intents.all())
 
@@ -26,7 +27,8 @@ async def on_button_click(interaction: disnake.MessageInteraction):
     # If the button's custom id is 'ticket' -> creating a ticket
     if interaction.component.custom_id == 'ticket':
         guild = interaction.guild
-        moderator = disnake.utils.get(guild.roles, id=1234)  # Moderator role
+        moderator = disnake.utils.get(guild.roles, id=config.get(
+            "moderator_role_id"))  # Moderator role
 
         # Create a category for tickets if it doesn't exist
         cat = disnake.utils.get(guild.categories, name=category_name)
