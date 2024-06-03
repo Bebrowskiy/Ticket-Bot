@@ -1,55 +1,49 @@
-<p align="center">Discord Бот, который создает индивидуальный тикет при нажатии на кнопку (работает по типу бота TicketTool)</p>
-
+<p align="center">A Discord Bot that creates an individual ticket when a button is pressed (similar to TicketTool bot)</p>
 
 <p align="center"><img alt="image" src="pictures/image.png" /></p>
 
-## Описание
-При нажатии на специальную кнопку, которая отправляется вместе с сообщением, создается индивидуальный тикет
+## Description
+When a special button sent with a message is pressed, an individual ticket is created.
 
-### Использование
-`/ping` - команда для проверки работоспособности бота
+### Usage
+`/ping` - command to check if the bot is working
 
-`/embed` - отправляет сообщение с кнопкой, при нажатии на которую создаётся тикет
+`/embed` - sends a message with a button that creates a ticket when pressed
 
-### Настройка
+### Configuration
 
-Настройка бота осуществляется в файле `config.json`
+The bot is configured in the `config.json` file.
 
-`token` - токен [Disocrd Бота](https://discord.com/developers/applications/)
+- `token` - [Discord Bot Token](https://discord.com/developers/applications/)
+- `prefix` - bot prefix
+- `ticket_category_name` - name of the category where tickets will be stored
+- `ticket_channel_name` - name of the ticket (formatted as `{name}-{user_id}` - e.g., `ABCD-1234`)
+- `moderator_role_id` - ID of the moderator role for access to tickets
 
-`prefix` -  префикс для бота
+## Installation and Launch
 
-`ticket_category_name` - название категории, где будут храниться тикеты
-
-`ticket_channel_name` - название тикета (будет как `{name}-{user_id}` - `ABCD-1234`)
-
-`moderator_role_id` - id роли модератора для доступа к тикетам
-
-## Установка и запуск
-
-### Установка
+### Installation
 
 ```bash
 git clone https://github.com/Bebrowskiy/Ticket-Bot.git
 ```
 
-### Зависимости
-
-- disnake
+### Dependencies
 
 ```bash
 cd Ticket-Bot/
 ```
-
 ```bash
 pip install -r requirements.txt
 ```
 
-### Запуск
+### Launch
 
 ```bash
-cd Bot
+cd Bot/
+```
+```bash
 python bot.py
 ```
 
-<p align="center"> <a href="https://vk.com/bebrow2021">Моя страница в VK</a></p>
+<p align="center"><a href="https://vk.com/bebrow2021">My VK Page</a></p>
